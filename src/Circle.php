@@ -8,8 +8,8 @@ class Circle implements ShapeInterface
     {
     }
 
-    public function area(): float
+    public function area(): Area
     {
-        return M_PI * $this->r->pow(2)->toFloat();
+        return new Area(M_PI * $this->r->pow(2)->toMillimeters());
     }
 }

@@ -4,5 +4,5 @@ declare(strict_types=1);
 
 interface ShapeInterface
 {
-    public function area(): float;
+    public function area(): Area;
 }

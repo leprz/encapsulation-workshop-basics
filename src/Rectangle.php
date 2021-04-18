@@ -8,8 +8,8 @@ class Rectangle implements ShapeInterface
     {
     }
 
-    public function area(): float
+    public function area(): Area
     {
-        return $this->a->multiply($this->b)->toFloat();
+        return new Area($this->a->multiply($this->b)->toMillimeters());
     }
 }

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 class Length
 {
-    public function __construct(private float $length)
+    public function __construct(private float $millimeters)
     {
-        self::assertGreaterThanZero($this->length);
+        self::assertGreaterThanZero($this->millimeters);
     }
 
     protected static function assertGreaterThanZero(float $num): void
@@ -18,16 +18,16 @@ class Length
 
     public function pow(int $num): self
     {
-        return new self($this->length ** $num);
+        return new self($this->millimeters ** $num);
     }
 
     public function multiply(self $length): self
     {
-        return new self($this->length * $length->length);
+        return new self($this->millimeters * $length->millimeters);
     }
 
-    public function toFloat(): float
+    public function toMillimeters(): float
     {
-        return $this->length;
+        return $this->millimeters;
     }
 }
