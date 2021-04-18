@@ -15,6 +15,6 @@ class Polyhedron
 
     public function volume(): float
     {
-        return $this->base->area()->getMillimeters() * $this->h->toMillimeters();
+        return $this->base->area()->multiply($this->h->toMillimeters());
     }
 }

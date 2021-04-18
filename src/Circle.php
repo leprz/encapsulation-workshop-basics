@@ -10,6 +10,11 @@ class Circle implements ShapeInterface
 
     public function area(): Area
     {
-        return new Area((int) round(M_PI * $this->r->pow(2)->toMillimeters()));
+        return new Area(
+            new SquareMillimeter(
+                (int) round(M_PI * $this->r->pow(2)->toMillimeters()
+                )
+            )
+        );
     }
 }
