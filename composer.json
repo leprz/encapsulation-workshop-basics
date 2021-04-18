@@ -1,0 +1,9 @@
+{
+    "name": "przemek/encapsulation",
+    "description": "",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
