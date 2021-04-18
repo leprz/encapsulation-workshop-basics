@@ -4,25 +4,25 @@ declare(strict_types=1);
 
 class Area
 {
-    public function __construct(private float $millimeters)
+    public function __construct(private int $squareMillimeters)
     {
-        self::assertGreaterThanZero($this->millimeters);
+        self::assertGreaterThanZero($this->squareMillimeters);
     }
 
-    private static function assertGreaterThanZero(float $millimeters): void
+    private static function assertGreaterThanZero(int $squareMillimeters): void
     {
-        if ($millimeters < 0) {
+        if ($squareMillimeters < 0) {
             throw new InvalidArgumentException('Parameter must be greater than 0.');
         }
     }
 
-    public function getMillimeters(): float
+    public function getMillimeters(): int
     {
-        return $this->millimeters;
+        return $this->squareMillimeters;
     }
 
     public function __toString(): string
     {
-        return $this->millimeters . 'mm';
+        return $this->squareMillimeters . 'mm²';
     }
 }

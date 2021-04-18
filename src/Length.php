@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 class Length
 {
-    public function __construct(private float $millimeters)
+    public function __construct(private int $millimeters)
     {
         self::assertGreaterThanZero($this->millimeters);
     }
 
-    protected static function assertGreaterThanZero(float $num): void
+    protected static function assertGreaterThanZero(int $num): void
     {
         if ($num < 0) {
             throw new InvalidArgumentException('Parameter must be greater than 0.');
@@ -26,7 +26,7 @@ class Length
         return new self($this->millimeters * $length->millimeters);
     }
 
-    public function toMillimeters(): float
+    public function toMillimeters(): int
     {
         return $this->millimeters;
     }
