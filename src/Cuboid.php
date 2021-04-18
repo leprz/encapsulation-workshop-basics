@@ -13,14 +13,6 @@ class Cuboid extends Polyhedron
         return new self($a, $b, $h);
     }
 
-    /**
-     * @deprecated use create(Length $a, Length $b, Length $h) instead
-     */
-    public static function createFromLength(Length $a, Length $b, Length $h): self
-    {
-        return new self($a, $b, $h);
-    }
-
     public function volume(): float
     {
         return $this->a->multiply($this->b)->multiply($this->h)->toFloat();
