@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$prism = new Cuboid(2, 2, 2);
+$cuboid = Cuboid::create(2, 2, 2);
 
-$prismVolume = $prism->volume();
+$cuboidVolume = $cuboid->volume();
 
-echo $prismVolume . "\n";
+echo $cuboidVolume . "\n";
 
-$cylinder = new Cylinder(2, 2);
+$cylinder = Cylinder::create(2, 2);
 
 $cylinderVolume = $cylinder->volume();
 

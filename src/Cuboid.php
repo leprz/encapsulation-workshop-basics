@@ -2,17 +2,31 @@
 
 declare(strict_types=1);
 
-class Cuboid extends Solid
+class Cuboid extends Polyhedron
 {
-    public function __construct(private float $a, private float $b, private float $h)
+    private function __construct(private Length $a, private Length $b, private Length $h)
     {
-        self::assertGreaterThanZero($a);
-        self::assertGreaterThanZero($b);
-        self::assertGreaterThanZero($h);
+    }
+
+    /**
+     * @deprecated please use createWithLength instead
+     */
+    public static function create(float $a, float $b, float $h): self
+    {
+        return new self(
+            new Length($a),
+            new Length($b),
+            new Length($h)
+        );
+    }
+
+    public static function createFromLength(Length $a, Length $b, Length $h): self
+    {
+        return new self($a, $b, $h);
     }
 
     public function volume(): float
     {
-        return $this->a * $this->b * $this->h;
+        return $this->a->multiply($this->b)->multiply($this->h)->toFloat();
     }
 }

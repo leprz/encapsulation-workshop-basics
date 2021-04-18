@@ -2,16 +2,27 @@
 
 declare(strict_types=1);
 
-class Cylinder extends Solid
+class Cylinder extends Polyhedron
 {
-    public function __construct(private float $r, private float $h)
+    private function __construct(private Length $r, private Length $h)
     {
-        self::assertGreaterThanZero($r);
-        self::assertGreaterThanZero($h);
+    }
+
+    /**
+     * @deprecated please use createWithLength instead
+     */
+    public static function create(float $r, float $h): self
+    {
+        return new self(new Length($r), new Length($h));
+    }
+
+    public static function createFromLength(Length $r, Length $h): self
+    {
+        return new self($r, $h);
     }
 
     public function volume(): float
     {
-        return M_PI * ($this->r ** 2) * $this->h;
+        return M_PI * $this->r->pow(2)->multiply($this->h)->toFloat();
     }
 }
