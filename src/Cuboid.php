@@ -8,18 +8,8 @@ class Cuboid
     {
     }
 
-    public function getA(): float
+    public function volume(): float
     {
-        return $this->a;
-    }
-
-    public function getB(): float
-    {
-        return $this->b;
-    }
-
-    public function getH(): float
-    {
-        return $this->h;
+        return $this->a * $this->b * $this->h;
     }
 }

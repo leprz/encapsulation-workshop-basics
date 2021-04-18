@@ -8,13 +8,8 @@ class Cylinder
     {
     }
 
-    public function getR(): float
+    public function volume(): float
     {
-        return $this->r;
-    }
-
-    public function getH(): float
-    {
-        return $this->h;
+        return M_PI * ($this->r ** 2) * $this->h;
     }
 }

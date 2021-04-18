@@ -6,12 +6,12 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 $prism = new Cuboid(2, 2, 2);
 
-$prismVolume = $prism->getA() * $prism->getB() * $prism->getH();
+$prismVolume = $prism->volume();
 
 echo $prismVolume . "\n";
 
 $cylinder = new Cylinder(2, 2);
 
-$cylinderVolume = M_PI * ($cylinder->getR() ** 2) * $cylinder->getH();
+$cylinderVolume = $cylinder->volume();
 
 echo $cylinderVolume . "\n";
