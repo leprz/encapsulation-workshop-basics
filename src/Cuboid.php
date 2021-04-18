@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
-class Cuboid extends Polyhedron
+class Cuboid implements SolidFigureInterface
 {
-    private function __construct(Rectangle $base, Length $h)
+    private function __construct(private Polyhedron $polyhedron)
     {
-        parent::__construct($base, $h);
     }
 
     public static function create(Length $a, Length $b, Length $h): self
     {
-        return new self(new Rectangle($a, $b), $h);
+        return new self(Polyhedron::create(new Rectangle($a, $b), $h));
+    }
+
+    public function volume(): float
+    {
+        return $this->polyhedron->volume();
     }
 }

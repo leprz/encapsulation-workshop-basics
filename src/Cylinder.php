@@ -2,15 +2,19 @@
 
 declare(strict_types=1);
 
-class Cylinder extends Polyhedron
+class Cylinder implements SolidFigureInterface
 {
-    private function __construct(Circle $base,Length $h)
+    private function __construct(private Polyhedron $polyhedron)
     {
-        parent::__construct($base, $h);
     }
 
     public static function create(Length $r, Length $h): self
     {
-        return new self(new Circle($r), $h);
+        return new self(Polyhedron::create(new Circle($r), $h));
+    }
+
+    public function volume(): float
+    {
+        return $this->polyhedron->volume();
     }
 }

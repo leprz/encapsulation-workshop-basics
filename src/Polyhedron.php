@@ -2,10 +2,15 @@
 
 declare(strict_types=1);
 
-abstract class Polyhedron implements SolidFigureInterface
+class Polyhedron
 {
-    protected function __construct(protected ShapeInterface $base, private Length $h)
+    private function __construct(private ShapeInterface $base, private Length $h)
     {
+    }
+
+    public static function create(ShapeInterface $base, Length $h): self
+    {
+        return new self($base, $h);
     }
 
     public function volume(): float
