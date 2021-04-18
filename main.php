@@ -8,6 +8,6 @@ $cuboid = Cuboid::create(new Length(2), new Length(2), new Length(2));
 $cylinder = Cylinder::create(new Length(2), new Length(2));
 $complexFigure = ComplexFigure::create($cuboid, $cylinder);
 
-echo $cuboid->volume() . "\n";
-echo $cylinder->volume() . "\n";
-echo $complexFigure->volume() . "\n";
+foreach ([$cuboid, $cylinder, $complexFigure] as $figure) {
+    echo $figure->volume() . "\n";
+}
