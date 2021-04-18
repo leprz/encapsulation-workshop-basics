@@ -10,10 +10,6 @@ class Rectangle implements ShapeInterface
 
     public function area(): Area
     {
-        return new Area(
-            new SquareMillimeter(
-                $this->a->multiply($this->b)->toMillimeters()
-            )
-        );
+        return new Area($this->a->multiply($this->b));
     }
 }

@@ -18,12 +18,17 @@ class SquareMillimeter
 
     public function multiply(float $multiplier): self
     {
-        return new self((int) round($this->squareMillimeters * $multiplier));
+        return new self((int)round($this->squareMillimeters * $multiplier));
     }
 
     public function getMillimeters(): int
     {
         return $this->squareMillimeters;
+    }
+
+    public function multiplyByValue(float $value): self
+    {
+        return new self((int)round($this->squareMillimeters * $value));
     }
 
     public function __toString(): string

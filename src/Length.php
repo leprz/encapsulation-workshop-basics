@@ -16,14 +16,14 @@ class Length
         }
     }
 
-    public function pow(int $num): self
+    public function pow(int $num): SquareMillimeter
     {
-        return new self($this->millimeters ** $num);
+        return new SquareMillimeter($this->millimeters ** $num);
     }
 
-    public function multiply(self $length): self
+    public function multiply(self $length): SquareMillimeter
     {
-        return new self($this->millimeters * $length->millimeters);
+        return new SquareMillimeter($this->millimeters * $length->millimeters);
     }
 
     public function toMillimeters(): int
