@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-abstract class Polyhedron
+abstract class Polyhedron implements SolidFigureInterface
 {
     protected function __construct(protected ShapeInterface $base, private Length $h)
     {

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-class ComplexFigure
+class ComplexFigure implements SolidFigureInterface
 {
-    /** @var \Polyhedron[] */
+    /** @var \SolidFigureInterface[] */
     private array $figures;
 
-    private function __construct(Polyhedron ...$figures)
+    private function __construct(SolidFigureInterface ...$figures)
     {
         $this->figures = $figures;
     }
 
-    public static function create(Polyhedron ...$figures): self
+    public static function create(SolidFigureInterface ...$figures): self
     {
         return new self(...$figures);
     }
@@ -21,7 +21,7 @@ class ComplexFigure
     {
         return array_reduce(
             $this->figures,
-            static fn(float $carry, Polyhedron $figure) => $carry + $figure->volume(),
+            static fn(float $carry, SolidFigureInterface $figure) => $carry + $figure->volume(),
             0
         );
     }
