@@ -4,17 +4,18 @@ declare(strict_types=1);
 
 class Cuboid extends Polyhedron
 {
-    private function __construct(private Length $a, private Length $b, private Length $h)
+    private function __construct(Rectangle $base, private Length $h)
     {
+        parent::__construct($base);
     }
 
     public static function create(Length $a, Length $b, Length $h): self
     {
-        return new self($a, $b, $h);
+        return new self(new Rectangle($a, $b), $h);
     }
 
     public function volume(): float
     {
-        return $this->a->multiply($this->b)->multiply($this->h)->toFloat();
+        return $this->base->area() * $this->h->toFloat();
     }
 }
