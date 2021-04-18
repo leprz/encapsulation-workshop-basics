@@ -13,8 +13,8 @@ class Polyhedron
         return new self($base, $h);
     }
 
-    public function volume(): float
+    public function volume(): Volume
     {
-        return $this->base->area()->multiply($this->h->toMillimeters());
+        return $this->base->area()->volume($this->h);
     }
 }

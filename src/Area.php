@@ -8,8 +8,13 @@ class Area
     {
     }
 
-    public function multiply(int $millimeters): float
+    public function volume(Length $height): Volume
     {
-        return $this->squareMillimeters->multiply($millimeters)->getMillimeters();
+        return new Volume($this->squareMillimeters->multiply($height));
+    }
+
+    public function __toString(): string
+    {
+        return (string) $this->squareMillimeters;
     }
 }

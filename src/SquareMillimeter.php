@@ -16,14 +16,9 @@ class SquareMillimeter
         }
     }
 
-    public function multiply(float $multiplier): self
+    public function multiply(Length $length): CubicMillimeter
     {
-        return new self((int)round($this->squareMillimeters * $multiplier));
-    }
-
-    public function getMillimeters(): int
-    {
-        return $this->squareMillimeters;
+        return new CubicMillimeter($this->squareMillimeters * $length->toMillimeters());
     }
 
     public function multiplyByValue(float $value): self

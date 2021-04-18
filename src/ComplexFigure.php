@@ -17,12 +17,12 @@ class ComplexFigure implements SolidFigureInterface
         return new self(...$figures);
     }
 
-    public function volume(): float
+    public function volume(): Volume
     {
         return array_reduce(
             $this->figures,
-            static fn(float $carry, SolidFigureInterface $figure) => $carry + $figure->volume(),
-            0
+            static fn(Volume $carry, SolidFigureInterface $figure) => $figure->volume()->add($carry),
+            Volume::empty()
         );
     }
 }

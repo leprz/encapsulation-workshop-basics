@@ -13,7 +13,7 @@ class Cylinder implements SolidFigureInterface
         return new self(Polyhedron::create(new Circle($r), $h));
     }
 
-    public function volume(): float
+    public function volume(): Volume
     {
         return $this->polyhedron->volume();
     }

@@ -13,7 +13,7 @@ class Cuboid implements SolidFigureInterface
         return new self(Polyhedron::create(new Rectangle($a, $b), $h));
     }
 
-    public function volume(): float
+    public function volume(): Volume
     {
         return $this->polyhedron->volume();
     }
