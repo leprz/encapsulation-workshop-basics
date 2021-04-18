@@ -8,14 +8,14 @@ class Cylinder extends Polyhedron
     {
     }
 
-    /**
-     * @deprecated please use createWithLength instead
-     */
-    public static function create(float $r, float $h): self
+    public static function create(Length $r, Length $h): self
     {
-        return new self(new Length($r), new Length($h));
+        return new self($r, $h);
     }
 
+    /**
+     * @deprecated use create(Length $r, Length $h) instead
+     */
     public static function createFromLength(Length $r, Length $h): self
     {
         return new self($r, $h);

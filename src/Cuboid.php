@@ -8,18 +8,14 @@ class Cuboid extends Polyhedron
     {
     }
 
-    /**
-     * @deprecated please use createWithLength instead
-     */
-    public static function create(float $a, float $b, float $h): self
+    public static function create(Length $a, Length $b, Length $h): self
     {
-        return new self(
-            new Length($a),
-            new Length($b),
-            new Length($h)
-        );
+        return new self($a, $b, $h);
     }
 
+    /**
+     * @deprecated use create(Length $a, Length $b, Length $h) instead
+     */
     public static function createFromLength(Length $a, Length $b, Length $h): self
     {
         return new self($a, $b, $h);
