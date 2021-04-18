@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace SolidFigure;
+
+use Shape\Rectangle;
+use ValueObject\Length;
+use ValueObject\Volume;
+
 class Cuboid implements SolidFigureInterface
 {
     private function __construct(private Polyhedron $polyhedron)

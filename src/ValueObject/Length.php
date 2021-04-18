@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+namespace ValueObject;
+
+use InvalidArgumentException;
+use ValueObject\Unit\SquareMillimeter;
+
 class Length
 {
     public function __construct(private int $millimeters)

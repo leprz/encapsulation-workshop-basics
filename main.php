@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+use SolidFigure\ComplexFigure;
+use SolidFigure\Cuboid;
+use SolidFigure\Cylinder;
+use ValueObject\Length;
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 $cuboid = Cuboid::create(

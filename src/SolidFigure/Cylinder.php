@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace SolidFigure;
+
+use Shape\Circle;
+use ValueObject\Length;
+use ValueObject\Volume;
+
 class Cylinder implements SolidFigureInterface
 {
     private function __construct(private Polyhedron $polyhedron)

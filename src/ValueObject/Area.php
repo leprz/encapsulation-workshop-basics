@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace ValueObject;
+
+use ValueObject\Unit\SquareMillimeter;
+
 class Area
 {
     public function __construct(private SquareMillimeter $squareMillimeters)
@@ -15,6 +19,6 @@ class Area
 
     public function __toString(): string
     {
-        return (string) $this->squareMillimeters;
+        return (string)$this->squareMillimeters;
     }
 }

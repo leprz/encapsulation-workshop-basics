@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+namespace Shape;
+
+use ValueObject\Area;
+use ValueObject\Length;
+
 class Circle implements ShapeInterface
 {
     public function __construct(private Length $r)

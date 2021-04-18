@@ -2,9 +2,13 @@
 
 declare(strict_types=1);
 
+namespace SolidFigure;
+
+use ValueObject\Volume;
+
 class ComplexFigure implements SolidFigureInterface
 {
-    /** @var \SolidFigureInterface[] */
+    /** @var \SolidFigure\SolidFigureInterface[] */
     private array $figures;
 
     private function __construct(SolidFigureInterface ...$figures)

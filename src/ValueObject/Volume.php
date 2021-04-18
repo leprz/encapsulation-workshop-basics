@@ -2,6 +2,10 @@
 
 declare(strict_types=1);
 
+namespace ValueObject;
+
+use ValueObject\Unit\CubicMillimeter;
+
 class Volume
 {
     public function __construct(private CubicMillimeter $cubicMillimeters)
@@ -20,6 +24,6 @@ class Volume
 
     public function __toString(): string
     {
-        return (string) $this->cubicMillimeters;
+        return (string)$this->cubicMillimeters;
     }
 }

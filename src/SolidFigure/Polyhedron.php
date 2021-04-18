@@ -2,6 +2,12 @@
 
 declare(strict_types=1);
 
+namespace SolidFigure;
+
+use Shape\ShapeInterface;
+use ValueObject\Length;
+use ValueObject\Volume;
+
 class Polyhedron
 {
     private function __construct(private ShapeInterface $base, private Length $h)
