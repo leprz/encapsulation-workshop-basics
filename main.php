@@ -8,6 +8,7 @@ use SolidFigure\Cylinder;
 use ValueObject\Length;
 
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/print_volume.php';
 
 $cuboid = Cuboid::create(
     a: new Length(2),
@@ -20,8 +21,9 @@ $cylinder = Cylinder::create(
     h: new Length(2)
 );
 
-$complexFigure = ComplexFigure::create($cuboid, $cylinder);
+$complexFigure = ComplexFigure::create(
+    $cuboid,
+    $cylinder
+);
 
-foreach ([$cuboid, $cylinder, $complexFigure] as $figure) {
-    echo $figure->volume() . "\n";
-}
+print_volume($cuboid, $cylinder, $complexFigure);

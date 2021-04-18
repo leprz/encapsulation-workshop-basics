@@ -8,7 +8,7 @@ use ValueObject\Unit\CubicMillimeter;
 
 class Volume
 {
-    public function __construct(private CubicMillimeter $cubicMillimeters)
+    public function __construct(private CubicMillimeter $volume)
     {
     }
 
@@ -19,11 +19,11 @@ class Volume
 
     public function add(Volume $addend): self
     {
-        return new self($this->cubicMillimeters->add($addend->cubicMillimeters));
+        return new self($this->volume->add($addend->volume));
     }
 
     public function __toString(): string
     {
-        return (string)$this->cubicMillimeters;
+        return (string)$this->volume;
     }
 }
