@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 abstract class Polyhedron
 {
-    protected function __construct(protected ShapeInterface $base)
+    protected function __construct(protected ShapeInterface $base, private Length $h)
     {
     }
 
-    abstract public function volume(): float;
+    public function volume(): float
+    {
+        return $this->base->area() * $this->h->toFloat();
+    }
 }
