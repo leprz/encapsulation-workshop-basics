@@ -9,7 +9,7 @@ class Length
         self::assertGreaterThanZero($this->millimeters);
     }
 
-    protected static function assertGreaterThanZero(int $num): void
+    private static function assertGreaterThanZero(int $num): void
     {
         if ($num < 0) {
             throw new InvalidArgumentException('Parameter must be greater than 0.');
