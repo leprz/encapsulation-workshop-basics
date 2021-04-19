@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-namespace App;
-
-use InvalidArgumentException;
-
 class Millimeter
 {
     private int $millimeters;

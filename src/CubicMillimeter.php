@@ -2,10 +2,6 @@
 
 declare(strict_types=1);
 
-namespace App\Geometry\Shape\Solid;
-
-use App\Millimeter;
-
 class CubicMillimeter
 {
     private Millimeter $volume;

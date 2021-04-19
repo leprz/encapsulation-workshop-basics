@@ -2,11 +2,6 @@
 
 declare(strict_types=1);
 
-namespace App\Geometry\Shape\Solid;
-
-use App\Geometry\ShapeInterface;
-use App\Millimeter;
-
 abstract class Polyhedron implements SolidFigureInterface
 {
     private ShapeInterface $base;

@@ -2,11 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Geometry\Shape\Solid;
-
 class ComplexFigure implements SolidFigureInterface
 {
-    /** @var \App\Geometry\Shape\Solid\SolidFigureInterface[] */
+    /** @var SolidFigureInterface[] */
     private array $figures;
 
     private function __construct(SolidFigureInterface ...$figures)

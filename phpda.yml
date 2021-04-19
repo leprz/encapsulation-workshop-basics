@@ -16,10 +16,10 @@ visitor:
 #  - PhpDA\Parser\Visitor\NamespacedStringCollector
 #  - PhpDA\Parser\Visitor\IocContainerAccessorCollector
 visitorOptions:
-  PhpDA\Parser\Visitor\Required\DeclaredNamespaceCollector: {minDepth: 2, sliceLength: 6}
-  PhpDA\Parser\Visitor\Required\MetaNamespaceCollector: {minDepth: 2, sliceLength: 6}
-  PhpDA\Parser\Visitor\Required\UsedNamespaceCollector: {minDepth: 2, sliceLength: 6}
-  PhpDA\Parser\Visitor\TagCollector: {minDepth: 1, sliceLength: 6}
+  PhpDA\Parser\Visitor\Required\DeclaredNamespaceCollector: {minDepth: 0, sliceLength: 6}
+  PhpDA\Parser\Visitor\Required\MetaNamespaceCollector: {minDepth: 0, sliceLength: 6}
+  PhpDA\Parser\Visitor\Required\UsedNamespaceCollector: {minDepth: 0, sliceLength: 6}
+  PhpDA\Parser\Visitor\TagCollector: {minDepth: 0, sliceLength: 6}
 # classMap:
 #   Fully\Qualified\Class\Name\To\NamespaceFilter: 'path/to/NamespaceFilter.php'
 #   Fully\Qualified\Class\Name\To\ReferenceValidator: 'path/to/ReferenceValidator.php'

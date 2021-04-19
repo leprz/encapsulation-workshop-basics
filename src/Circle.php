@@ -2,13 +2,6 @@
 
 declare(strict_types=1);
 
-namespace App\Geometry\Shape;
-
-use App\Geometry\Area;
-use App\Geometry\ShapeInterface;
-use App\Geometry\SquareMillimeter;
-use App\Millimeter;
-
 class Circle implements ShapeInterface
 {
     private Millimeter $r;
