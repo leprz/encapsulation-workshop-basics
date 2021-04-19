@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ValueObject;
-
-use ValueObject\Unit\CubicMillimeter;
+namespace Geometry\Shape\Solid;
 
 class Volume
 {
@@ -14,7 +12,7 @@ class Volume
 
     public static function empty(): self
     {
-        return new self(new CubicMillimeter(0));
+        return new self(CubicMillimeter::empty());
     }
 
     public function add(Volume $addend): self

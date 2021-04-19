@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ValueObject;
+namespace Geometry;
 
-use ValueObject\Unit\SquareMillimeter;
+use Millimeter;
 
 class Area
 {
@@ -12,9 +12,9 @@ class Area
     {
     }
 
-    public function volume(Length $height): Volume
+    public function multiply(Millimeter $multiplier): Millimeter
     {
-        return new Volume($this->area->multiply($height));
+        return $this->area->multiply($multiplier);
     }
 
     public function __toString(): string

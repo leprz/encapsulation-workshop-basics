@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-namespace SolidFigure;
-
-use ValueObject\Volume;
+namespace Geometry\Shape\Solid;
 
 class ComplexFigure implements SolidFigureInterface
 {
-    /** @var \SolidFigure\SolidFigureInterface[] */
+    /** @var \Geometry\Shape\Solid\SolidFigureInterface[] */
     private array $figures;
 
     private function __construct(SolidFigureInterface ...$figures)
@@ -16,7 +14,7 @@ class ComplexFigure implements SolidFigureInterface
         $this->figures = $figures;
     }
 
-    public static function create(SolidFigureInterface ...$figures): self
+    public static function combine(SolidFigureInterface ...$figures): self
     {
         return new self(...$figures);
     }

@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SolidFigure;
-
-use ValueObject\Volume;
+namespace Geometry\Shape\Solid;
 
 interface SolidFigureInterface
 {

@@ -2,9 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Shape;
-
-use ValueObject\Area;
+namespace Geometry;
 
 interface ShapeInterface
 {
