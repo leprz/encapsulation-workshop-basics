@@ -9,8 +9,11 @@ use ValueObject\Unit\SquareMillimeter;
 
 class Length
 {
-    public function __construct(private int $millimeters)
+    private int $millimeters;
+
+    public function __construct(int $millimeters)
     {
+        $this->millimeters = $millimeters;
         self::assertGreaterThanZero($this->millimeters);
     }
 

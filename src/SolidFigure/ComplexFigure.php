@@ -25,7 +25,7 @@ class ComplexFigure implements SolidFigureInterface
     {
         return array_reduce(
             $this->figures,
-            static fn(Volume $carry, SolidFigureInterface $figure) => $figure->volume()->add($carry),
+            static function(Volume $carry, SolidFigureInterface $figure): Volume { return $figure->volume()->add($carry); },
             Volume::empty()
         );
     }

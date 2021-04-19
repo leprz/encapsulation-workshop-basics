@@ -10,8 +10,14 @@ use ValueObject\Volume;
 
 abstract class Polyhedron implements SolidFigureInterface
 {
-    protected function __construct(private ShapeInterface $base, private Length $h)
+    private ShapeInterface $base;
+
+    private Length $h;
+
+    protected function __construct(ShapeInterface $base, Length $h)
     {
+        $this->h = $h;
+        $this->base = $base;
     }
 
     public function volume(): Volume

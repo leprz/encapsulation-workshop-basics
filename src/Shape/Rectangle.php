@@ -9,8 +9,14 @@ use ValueObject\Length;
 
 class Rectangle implements ShapeInterface
 {
-    public function __construct(private Length $a, private Length $b)
+    private Length $a;
+
+    private Length $b;
+
+    public function __construct(Length $a, Length $b)
     {
+        $this->b = $b;
+        $this->a = $a;
     }
 
     public function area(): Area

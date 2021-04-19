@@ -8,8 +8,11 @@ use ValueObject\Unit\CubicMillimeter;
 
 class Volume
 {
-    public function __construct(private CubicMillimeter $volume)
+    private CubicMillimeter $volume;
+
+    public function __construct(CubicMillimeter $volume)
     {
+        $this->volume = $volume;
     }
 
     public static function empty(): self

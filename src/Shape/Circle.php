@@ -9,8 +9,11 @@ use ValueObject\Length;
 
 class Circle implements ShapeInterface
 {
-    public function __construct(private Length $r)
+    private Length $r;
+
+    public function __construct(Length $r)
     {
+        $this->r = $r;
     }
 
     public function area(): Area

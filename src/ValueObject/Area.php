@@ -8,8 +8,11 @@ use ValueObject\Unit\SquareMillimeter;
 
 class Area
 {
-    public function __construct(private SquareMillimeter $area)
+    private SquareMillimeter $area;
+
+    public function __construct(SquareMillimeter $area)
     {
+        $this->area = $area;
     }
 
     public function volume(Length $height): Volume

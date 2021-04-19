@@ -9,8 +9,11 @@ use ValueObject\Length;
 
 class SquareMillimeter
 {
-    public function __construct(private int $squareMillimeters)
+    private int $squareMillimeters;
+
+    public function __construct(int $squareMillimeters)
     {
+        $this->squareMillimeters = $squareMillimeters;
         self::assertGreaterThanZero($this->squareMillimeters);
     }
 
@@ -23,7 +26,7 @@ class SquareMillimeter
 
     public function multiply(Length $length): CubicMillimeter
     {
-        return new CubicMillimeter($this->squareMillimeters * $length->toMillimeters());
+        return new CubicMillimeter($this->squareMillimeters * $length->multiplySqareMillimeters());
     }
 
     public function multiplyByValue(float $value): self

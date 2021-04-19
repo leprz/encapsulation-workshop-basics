@@ -8,8 +8,11 @@ use InvalidArgumentException;
 
 class CubicMillimeter
 {
-    public function __construct(private int $cubicMillimeters)
+    private int $cubicMillimeters;
+
+    public function __construct(int $cubicMillimeters)
     {
+        $this->cubicMillimeters = $cubicMillimeters;
         self::assertGreaterThanZero($this->cubicMillimeters);
     }
 
