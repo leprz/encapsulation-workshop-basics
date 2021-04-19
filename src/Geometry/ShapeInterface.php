@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Geometry;
+namespace App\Geometry;
 
 interface ShapeInterface
 {

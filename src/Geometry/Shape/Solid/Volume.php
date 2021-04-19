@@ -2,12 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid;
+namespace App\Geometry\Shape\Solid;
 
 class Volume
 {
-    public function __construct(private CubicMillimeter $volume)
+    private CubicMillimeter $volume;
+
+    public function __construct(CubicMillimeter $volume)
     {
+        $this->volume = $volume;
     }
 
     public static function empty(): self

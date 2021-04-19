@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid;
+namespace App\Geometry\Shape\Solid;
 
 class ComplexFigure implements SolidFigureInterface
 {
-    /** @var \Geometry\Shape\Solid\SolidFigureInterface[] */
+    /** @var \App\Geometry\Shape\Solid\SolidFigureInterface[] */
     private array $figures;
 
     private function __construct(SolidFigureInterface ...$figures)
@@ -23,7 +23,9 @@ class ComplexFigure implements SolidFigureInterface
     {
         return array_reduce(
             $this->figures,
-            static fn(Volume $carry, SolidFigureInterface $figure) => $figure->volume()->add($carry),
+            static function(Volume $carry, SolidFigureInterface $figure): Volume {
+                return $figure->volume()->add($carry);
+            },
             Volume::empty()
         );
     }

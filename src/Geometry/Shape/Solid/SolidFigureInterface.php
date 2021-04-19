@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid;
+namespace App\Geometry\Shape\Solid;
 
 interface SolidFigureInterface
 {

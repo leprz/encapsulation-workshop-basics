@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid;
+namespace App\Geometry\Shape\Solid;
 
-use Millimeter;
+use App\Millimeter;
 
 class CubicMillimeter
 {
-    public function __construct(private Millimeter $volume)
+    private Millimeter $volume;
+
+    public function __construct(Millimeter $volume)
     {
+        $this->volume = $volume;
     }
 
     public function add(self $addend): self

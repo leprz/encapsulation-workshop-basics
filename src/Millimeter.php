@@ -2,10 +2,17 @@
 
 declare(strict_types=1);
 
+namespace App;
+
+use InvalidArgumentException;
+
 class Millimeter
 {
-    public function __construct(private int $millimeters)
+    private int $millimeters;
+
+    public function __construct(int $millimeters)
     {
+        $this->millimeters = $millimeters;
         self::assertGreaterThanZero($this->millimeters);
     }
 

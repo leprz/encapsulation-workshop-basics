@@ -2,14 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Geometry;
+namespace App\Geometry;
 
-use Millimeter;
+use App\Millimeter;
 
 class SquareMillimeter
 {
-    public function __construct(private Millimeter $area)
+    private Millimeter $area;
+
+    public function __construct(Millimeter $area)
     {
+        $this->area = $area;
     }
 
     public function multiply(Millimeter $multiplier): Millimeter

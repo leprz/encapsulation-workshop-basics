@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid\Figure;
+namespace App\Geometry\Shape\Solid\Figure;
 
-use Geometry\Shape\Circle;
-use Geometry\Shape\Solid\Polyhedron;
-use Millimeter;
+use App\Geometry\Shape\Circle;
+use App\Geometry\Shape\Solid\Polyhedron;
+use App\Millimeter;
 
 class Cylinder extends Polyhedron
 {

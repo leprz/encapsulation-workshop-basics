@@ -2,15 +2,21 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape\Solid;
+namespace App\Geometry\Shape\Solid;
 
-use Geometry\ShapeInterface;
-use Millimeter;
+use App\Geometry\ShapeInterface;
+use App\Millimeter;
 
 abstract class Polyhedron implements SolidFigureInterface
 {
-    protected function __construct(private ShapeInterface $base, private Millimeter $h)
+    private ShapeInterface $base;
+
+    private Millimeter $h;
+
+    protected function __construct(ShapeInterface $base, Millimeter $h)
     {
+        $this->h = $h;
+        $this->base = $base;
     }
 
     public function volume(): Volume

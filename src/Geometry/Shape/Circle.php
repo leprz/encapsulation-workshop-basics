@@ -2,17 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Geometry\Shape;
+namespace App\Geometry\Shape;
 
-use Geometry\Area;
-use Geometry\ShapeInterface;
-use Geometry\SquareMillimeter;
-use Millimeter;
+use App\Geometry\Area;
+use App\Geometry\ShapeInterface;
+use App\Geometry\SquareMillimeter;
+use App\Millimeter;
 
 class Circle implements ShapeInterface
 {
-    public function __construct(private Millimeter $r)
+    private Millimeter $r;
+
+    public function __construct(Millimeter $r)
     {
+        $this->r = $r;
     }
 
     public function area(): Area
